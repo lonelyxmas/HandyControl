@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,7 +24,7 @@ public class DataService
 
         foreach (var item in jsonObj)
         {
-            var titleKey = (string) item.title;
+            var titleKey = (string)item.title;
             var title = titleKey;
             List<DemoItemModel> list = Convert2DemoItemList(item.demoItemList);
 
@@ -33,8 +33,8 @@ public class DataService
                 Key = titleKey,
                 Title = title,
                 DemoItemList = list,
-                SelectedIndex = (int) item.selectedIndex,
-                IsGroupEnabled = (bool) item.group
+                SelectedIndex = (int)item.selectedIndex,
+                IsGroupEnabled = (bool)item.group
             };
 
             infoList.Add(demoInfoModel);
@@ -70,11 +70,11 @@ public class DataService
 
         foreach (var item in list)
         {
-            var name = (string) item[0];
+            var name = (string)item[0];
             string targetCtlName = item[1];
             string imageBrushName = item[2];
-            var isNew = !string.IsNullOrEmpty((string) item[3]);
-            var groupName = (string) item[4];
+            var isNew = !string.IsNullOrEmpty((string)item[3]);
+            var groupName = (string)item[4];
             if (string.IsNullOrEmpty(groupName))
             {
                 groupName = "Misc";
